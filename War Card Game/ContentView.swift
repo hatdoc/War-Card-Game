@@ -11,11 +11,13 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Image("background-plain")
+                .resizable()
                 .ignoresSafeArea()
             
             VStack{
                 Spacer()
-                Image("logo").padding(50)
+                Image("logo")
+                Spacer()
                 HStack{
                     Spacer()
                     Image("card2")
@@ -24,35 +26,28 @@ struct ContentView: View {
                     Spacer()
                 }
                 Spacer()
-                
                 Image("button")
-                
                 Spacer()
-                
                 HStack{
                     Spacer()
-                    Text("Player")
+                    VStack{
+                        Text("Player")
+                            .font(.headline)
+                            .padding(.bottom, 10.0)
+                        Text("0")
+                            .font(.largeTitle)
+                    }
                     Spacer()
-                    Text("CPU")
+                    VStack{
+                        Text("CPU")
+                            .font(.headline)
+                            .padding(.bottom, 10.0)
+                        Text("0")
+                            .font(.largeTitle)
+                    }
                     Spacer()
                 }
-                .font(.title2)
                 .foregroundColor(.white)
-                
-                Spacer()
-                
-                HStack{
-                    Spacer()
-                    Text("0")
-                    Spacer()
-                    Text("0")
-                    Spacer()
-                }
-                .font(.title)
-                .foregroundColor(.white)
-                
-                Spacer()
-                Spacer()
                 Spacer()
             }
         }
